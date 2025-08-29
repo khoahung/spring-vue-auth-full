@@ -20,7 +20,7 @@
 		  :columns="columns"
 		  class="table table-striped"
 		  :ajax="{
-			url: 'http://localhost:8082/public/listUser',
+			url: '${AUTH_BASE}/public/listUser',
 			dataSrc: function (json) {
 			  return json.data;
 			}
