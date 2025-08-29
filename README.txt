@@ -1,27 +1,33 @@
 
-# Full demo projects: auth-service, product-service, fe-vue
+# Full demo projects: auth-service, user-service, fe-vue
 
-Projects are configured to use HS256 HMAC JWT for simplicity in the demo (shared secret).
-IMPORTANT: In production, use RS256 or OAuth2/OIDC and store secrets securely.
+# environment require
+
++ maven
++ java JDK 23
++ docker
 
 ## How to run
 
-1. Build/run auth-service:
-   - cd auth-service
-   - mvn -q spring-boot:run
-   (or build: mvn -q package && java -jar target/*.jar)
+edit file .env for vueJS fix IP local in .env file 
 
-2. Build/run product-service:
-   - cd product-service
-   - mvn -q spring-boot:run
++ change IP from row line 
 
-3. Run frontend:
-   - cd fe-vue
-   - npm install
-   - npm run dev
+VITE_API_BASE=http://192.168.1.101:8082
+VITE_AUTH_BASE=http://192.168.1.101:8081
 
-Default endpoints:
-- Auth service: http://localhost:8081/auth/register, /auth/login, /auth/refresh
-- Product service: http://localhost:8082/api/products (protected), /public/ping
+edit file application.yml both user-service and auth-service
 
-Demo default JWT secret is set in both application.yml files. Change before production.
++ edit line by IP server 
+	
+	url: http://192.168.1.101
+
+Deploy in docker
+
+./clean_docker.cmd
+./build_docker.cmd
+
+open FE http://192.168.1.101:5173
+
+Account Admin default : admin/123456
+
