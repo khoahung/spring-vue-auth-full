@@ -1,12 +1,12 @@
 services:
-    fiware-frontend:
+    fe-vue:
         container_name: fe-vue
         build:
             context: ./
             dockerfile: Dockerfile
         image: fe-vue:latest
         ports:
-            - 1573:1573
+            - 5173:5173
         networks:
           default:
             ipv4_address: 172.19.0.4
