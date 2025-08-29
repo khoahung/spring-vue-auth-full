@@ -1,0 +1,17 @@
+version: '2'
+services:
+    fiware-frontend:
+        container_name: fiware-frontend
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        image: fiware-frontend:latest
+        ports:
+            - 8081:3000
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
+
+networks:
+  default:
+    name: fiware_default
+    external: true

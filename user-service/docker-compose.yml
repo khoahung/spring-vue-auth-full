@@ -1,15 +1,15 @@
 version: '2'
 services:
   app:
-    image: 'auth-service:latest'
+    image: 'user-service:latest'
     build:
       context: .
-    container_name: auth-service
+    container_name: user-service
     ports:
-      - "8081:8081" 
+      - "8082:8082" 
     networks:
       default:
-        ipv4_address: 172.18.0.2
+        ipv4_address: 172.18.0.3
     extra_hosts:
       - "host.docker.internal:host-gateway"
   

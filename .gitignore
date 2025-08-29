@@ -3,6 +3,8 @@
 /node_modules/
 fe-vue/node_modules
 fe-vue/node_modules/
+user-service/target
+auth-service/target
 
 # Build output
 /dist
