@@ -223,19 +223,19 @@ const saveAdd = (addUser) => {
   auth.register(username.value,password.value,roles.value).then((res)=>{ reloadTable();
   alert('completed')}).catch(()=> alert('Failure'))
   modalAddInstance.hide()
-  location.reload();
+  //location.reload();
 }
 const saveEdit = () => {
   auth.update(editUser.value.id,editUser.value.username,editUser.value.password,editUser.value.roles).then(()=>{ reloadTable();
   alert('completed')}).catch(()=> alert('Failure'))
   modalUpdateInstance.hide()
-  location.reload();
+ // location.reload();
 }
 
 const deleteRow = (rowData) => {
   auth.deleteUser(rowData.id).then(()=>{ reloadTable();
   alert('completed delete')}).catch(()=> alert('Failure'))
-  location.reload();
+ // location.reload();
 }
 
 const reloadTable = () => {
