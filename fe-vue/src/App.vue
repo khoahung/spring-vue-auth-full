@@ -20,7 +20,7 @@
 		  :columns="columns"
 		  class="table table-striped"
 		  :ajax="{
-			url: '${API_BASE}/public/listUser',
+			url: API_BASE+'/public/listUser',
 			dataSrc: function (json) {
 			  return json.data;
 			}
@@ -157,7 +157,6 @@ const addUser = ref({})
 const username = ref('');
 const password = ref('');
 const roles = ref('');
-alert('${API_BASE}')
 const modalUpdateRef = ref(null)
 let modalUpdateInstance = null
 
