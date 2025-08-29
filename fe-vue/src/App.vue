@@ -20,7 +20,7 @@
 		  :columns="columns"
 		  class="table table-striped"
 		  :ajax="{
-			url: 'http://192.168.1.101:8082/public/listUser',
+			url: '${API_BASE}/public/listUser',
 			dataSrc: function (json) {
 			  return json.data;
 			}
@@ -132,6 +132,8 @@ import $ from 'jquery'
 import ModalForm from './components/FormInputData.vue'
 
 import { jwtDecode } from 'jwt-decode'
+
+const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8082';
 
 const table = ref(null);
 const user = ref(localStorage.getItem('username') || '')
