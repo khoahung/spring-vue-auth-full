@@ -15,5 +15,5 @@ services:
 
 networks:
   default:
-    name: fiware_default_test
+    name: network_default_test
     external: true
