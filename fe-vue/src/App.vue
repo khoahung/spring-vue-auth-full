@@ -20,7 +20,7 @@
 		  :columns="columns"
 		  class="table table-striped"
 		  :ajax="{
-			url: '${API_BASE}/public/listUser',
+			url: 'http://192.168.1.101/public/listUser',
 			dataSrc: function (json) {
 			  return json.data;
 			}
