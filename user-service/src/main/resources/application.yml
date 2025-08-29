@@ -1,0 +1,14 @@
+
+server:
+  port: 8082
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:userdb;DB_CLOSE_DELAY=-1
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+jwt:
+  secret: "verysecretkey-which-should-be-at-least-32-bytes-for-hmac!!"

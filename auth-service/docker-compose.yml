@@ -1,0 +1,10 @@
+version: '2'
+services:
+  app:
+    image: 'auth-service:latest'
+    build:
+      context: .
+    container_name: auth-service
+    ports:
+      - "8081:8081" 
+         

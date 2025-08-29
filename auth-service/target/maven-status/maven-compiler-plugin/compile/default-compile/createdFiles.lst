@@ -1,0 +1,9 @@
+com\example\auth\api\AuthController$RegisterReq.class
+com\example\auth\config\SecurityConfig.class
+com\example\auth\user\User.class
+com\example\auth\user\UserRepository.class
+com\example\auth\api\AuthController.class
+com\example\auth\user\ObjectID.class
+com\example\auth\AuthServiceApplication.class
+com\example\auth\security\JwtService.class
+com\example\auth\api\AuthController$LoginReq.class

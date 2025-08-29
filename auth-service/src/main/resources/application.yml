@@ -1,0 +1,23 @@
+
+server:
+  port: 8081
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:authdb;DB_CLOSE_DELAY=-1
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+    hikari:
+      auto-commit: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+jwt:
+  secret: "verysecretkey-which-should-be-at-least-32-bytes-for-hmac!!"
+  issuer: "auth-service"
+  access-token-ttl: 900
+  refresh-token-ttl: 1209600
