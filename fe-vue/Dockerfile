@@ -1,17 +1,18 @@
-FROM node:16.15.1-alpine3.15
+FROM node:18-alpine
 
-MAINTAINER tntech
-
+# Tạo thư mục app
 WORKDIR /app
 
+# Copy file cấu hình và cài dependencies
+COPY package*.json ./
+RUN npm install
 
-COPY deploy/ /app/
+# Copy source code
+COPY . .
 
-ENV NODE_VERSION=16.15.1
+# Expose port mặc định Vue dev server
+EXPOSE 5173
 
+# Chạy dev server
+CMD ["npm", "run", "dev", "--", "--host"]
 
-RUN yarn
-
-CMD ["yarn", "start"]
-
-EXPOSE 3000
