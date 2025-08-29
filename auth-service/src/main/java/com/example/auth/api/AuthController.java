@@ -42,7 +42,7 @@ public class AuthController {
         u.setUsername("admin");
         u.setPassword(encoder.encode("123456"));
         u.setRoles(List.of("ROLE_ADMIN"));
-        repo.save(u);
+        repo.saveAndFlush(u);
     }
     
     @PostMapping("/register")
@@ -53,7 +53,7 @@ public class AuthController {
         u.setUsername(req.username());
         u.setPassword(encoder.encode(req.password()));
         u.setRoles(List.of(req.role()));
-        repo.save(u);
+        repo.saveAndFlush(u);
         return ResponseEntity.ok(Map.of("message","ok"));
     }
     
@@ -65,7 +65,7 @@ public class AuthController {
 	        u.setUsername(req.username());
 	        u.setPassword(encoder.encode(req.password()));
 	        u.setRoles(new ArrayList<>(Arrays.asList(req.role())));
-	        repo.save(u);
+	        repo.saveAndFlush(u);
     	}
         return ResponseEntity.ok(Map.of("message","ok"));
     }
