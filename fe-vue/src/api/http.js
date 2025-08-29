@@ -2,8 +2,8 @@
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode'
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8082';
-const AUTH_BASE = import.meta.env.VITE_AUTH_BASE || 'http://localhost:8081';
+const API_BASE = import.meta.env.VITE_API_BASE || 'http://user-service:8082';
+const AUTH_BASE = import.meta.env.VITE_AUTH_BASE || 'http://auth-service:8081';
 
 let isRefreshing = false;
 let refreshQueue = [];
