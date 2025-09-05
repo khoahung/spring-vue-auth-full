@@ -24,7 +24,7 @@ public class SecurityConfig implements WebMvcConfigurer {
     
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.csrf(csrf -> csrf.disable());
+        http.csrf(csrf -> csrf.disable()).cors(cors -> {}); // bật CORS;
         http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
         http.authorizeHttpRequests(auth -> auth
                 .requestMatchers("/public/**").permitAll()
@@ -35,9 +35,9 @@ public class SecurityConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**") // Apply to all paths
-                .allowedOrigins("*") // Specific origins
+                .allowedOrigins(url+":5173") // Specific origins
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                .allowedHeaders("*") // Allow all headers
-                .allowCredentials(true); // Allow sending cookies and authentication headers
+                .allowedHeaders("*")
+                .allowCredentials(true); // nếu dùng cookie/token
     }
 }
