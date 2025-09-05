@@ -34,7 +34,7 @@ public class SecurityConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**") // Apply to all paths
-                .allowedOrigins(url+":5173",url+":8082") // Specific origins
+                .allowedOrigins("*") // Specific origins
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*") // Allow all headers
                 .allowCredentials(true); // Allow sending cookies and authentication headers
