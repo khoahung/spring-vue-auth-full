@@ -45,7 +45,6 @@ public class AuthController {
         repo.saveAndFlush(u);
     }
     
-    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody RegisterReq req){
         if (repo.findByUsername(req.username()).isPresent())
@@ -58,7 +57,6 @@ public class AuthController {
         return ResponseEntity.ok(Map.of("message","ok"));
     }
     
-    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/updateUser")
     public ResponseEntity<?> update(@RequestBody RegisterReq req){
     	Optional<User> user = repo.findById(req.id());
@@ -72,7 +70,6 @@ public class AuthController {
         return ResponseEntity.ok(Map.of("message","ok"));
     }
     
-    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/deleteUser")
     public ResponseEntity<?> delete(@RequestBody ObjectID id){
     	repo.deleteById(id.getId());
